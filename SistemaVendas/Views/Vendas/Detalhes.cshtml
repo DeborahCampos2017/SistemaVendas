@@ -1,0 +1,58 @@
+﻿@model SistemaVendas.Models.Vendas;
+
+@{
+    ViewData["Title"] = "Detalhes da Venda";
+}
+
+<h1>Detalhes da Venda</h1>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.DataVenda)
+        </dt>
+        <dt class="col-sm-10">
+            @Html.DisplayFor(x => x.DataVenda)
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.IdProduto)
+        </dt>
+        <dt class="col-sm-10">
+            @Html.DisplayFor(x => x.IdProduto)
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.NomeProduto)
+        </dt>
+        <dt class="col-sm-10">
+            @Html.DisplayFor(x => x.NomeProduto)
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.NomeVendedor)
+        </dt>
+        <dt class="col-sm-10">
+            @Html.DisplayFor(x => x.NomeVendedor)
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.NomeVendedor)
+        </dt>
+        <dt class="col-sm-10">
+            @Html.DisplayFor(x => x.NomeVendedor)
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.CpfVendedor)
+        </dt>
+        <dt class="col-sm-10">
+            @Html.DisplayFor(x => x.CpfVendedor)
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.EmailVendedor)
+        </dt>
+        <dt class="col-sm-10">
+            @Html.DisplayFor(x => x.EmailVendedor)
+        </dt>
+    </dl>
+</div>
+
+<a asp-action="Editar" asp-route-id="@Model.Id">Editar</a>
+
+<a asp-action="Index">Voltar</a>

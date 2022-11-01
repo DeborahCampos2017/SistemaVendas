@@ -1,0 +1,83 @@
+﻿@model IEnumerable<SistemaVendas.Models.Vendas>
+
+@{
+    ViewData["Title"] = "Controle de Vendas";
+}
+
+<h2>Vendas</h2>
+
+<p>
+    <a asp-action="Criar">Nova Venda</a>
+</p>
+
+<table id="myTable" class="display">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+             <th>
+                @Html.DisplayNameFor(model => model.DataVenda)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdProduto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeProduto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorProduto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeVendedor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.DataVenda)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.IdProduto)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.NomeProduto)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.ValorProduto)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.NomeVendedor)
+                </td>
+                 <td>
+                    @Html.DisplayFor(model => item.Status)
+                </td>
+              
+                <td>
+                    <a asp-action="Vendedor" class="btn btn-primary m-1" asp-route-id="@item.Id">Vendedor</a> |
+                    <a asp-action="Editar" class="btn btn-success m-1" asp-route-id="@item.Id">Editar</a> |
+                    <a asp-action="Detalhes" class="btn btn-primary m-1" asp-route-id="@item.Id">Detalhes</a> |
+                    <a asp-action="Deletar" class="btn btn-danger m-1" asp-route-id="@item.Id">Deletar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable();
+        });
+    </script>
+}
